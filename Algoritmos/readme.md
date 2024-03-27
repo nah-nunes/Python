@@ -1,5 +1,5 @@
 ### Algoritmos e Estruturas de Dados com Python 
-https://docs.google.com/document/u/7/d/e/2PACX-1vQMHEmdOg_3TTLcsxUwB2he57ycYN-fw8RupPX-GcV4c0hOTu46vxbKouzf6HcqUIHQ_8JbPpW2lBmb/pub
+
 
 ### Estudos
 
@@ -94,3 +94,46 @@ print(a or b)   # Saída: True
 print(not a)    # Saída: False
 ```
 ### Estruturas de controle 
+
+**if, elif, else**
+As estruturas condicionais permitem que o programa execute diferentes blocos de código com base em condições específicas.
+```python
+if condição1:
+    # Verifica se uma condição é verdadeira e executa um bloco de código se ela for
+elif condição2:
+    # Permite verificar múltiplas condições em sequência
+else:
+    # Executa um bloco de código se nenhuma das condições anteriores for verdadeira
+#exemplo:
+idade = 20
+if idade < 18:
+    print("Menor de idade")
+elif idade >= 18 and idade < 65:
+    print("Adulto")
+else:
+    print("Idoso")
+
+```
+
+**LOOPS**
+**for**
+Itera sobre os elementos de uma sequência.
+```python
+for elemento in sequência:
+    # Bloco de código executado para cada elemento na sequência
+for i in range(5):
+    print(i)
+```
+**while**
+Executa um bloco de código enquanto uma condição específica for verdadeira.
+```python
+while condição:
+  # Bloco de código executado enquanto a condição for verdadeira
+x = 0
+while x < 5:
+    print(x)
+    x += 1
+#break: Interrompe imediatamente a execução do loop e sai dele.
+#continue: Pula o restante do código no loop e vai para a próxima iteração.
+
+```
