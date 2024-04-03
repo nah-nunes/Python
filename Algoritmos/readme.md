@@ -137,3 +137,94 @@ while x < 5:
 #continue: Pula o restante do código no loop e vai para a próxima iteração.
 
 ```
+
+**Coleções**
+   - **set** 
+é uma estrutura de dados que armazena itens únicos e não ordenados. Isso significa que não pode conter elementos duplicados e não mantém a ordem em que os elementos foram inseridos. São muito úteis quando vc precisa armazenar uma coleção de itens onde a ordem não importa e cada item é único.  
+- Itens únicos
+- Não ordenado
+- mutável (adicionar ou remover elementos)
+Pode-se criar um set utilizando chaves {} ou a função set()
+
+```python
+
+frutas ={"maçã", "laranja", "abacaxi"}
+frutas.add("Pera")
+frutas.remove("maçã")
+frutas.pop()
+for fruta in frutas:
+    print(fruta)
+```
+    - **Dictionary**
+
+Estrutura de dados que mapeia chaves e valores. É uma coleção mutável e indexada de itens, onde cada item é uma associação de uma chave única a um valor. 
+- chaves únicas
+- não ordenado
+- mutável
+Cria-se um dicionário utilizando {} e especificando os pares chave-valor, separados por vírgula. 
+
+```python
+meses ={
+    "jan":"Janeiro",
+    "fev":"Fevereiro",
+    "mar":"Março",
+    "apr":"Abril",
+    "may":"Maio",
+    "jun":"Junho",
+    "jul":"Julho",
+    "aug":"Agosto",
+}
+print(meses.get("abc", "Valor Padrão"))# invalido
+print(meses.get["Abc"])# quebra
+print(len(meses)) #retorna o tamanho da estrutura de dados
+```
+### Tratando exceções 
+Lidando com erros ou condições excepcionais que podem ocorrer durante a execução de um programa. Isso evita que o programa pare abruptamente e fornece uma maneira de lidar com essas situações de forma controlada. O tratamento de exceções é feito usando blocos 'try', 'except', 'else' e 'finally'.
+
+**Bloco try e except**
+O código que pode gerar uma exceção é colocado dentro de um bloco 'try'. Se uma exceção ocorre o controle é transferido para o bloco 'except' que contém o código para lidar com a exceção. 
+```python
+try:
+    # Código que pode gerar uma exceção
+    resultado = 10 / 0
+except ZeroDivisionError:
+    # Lidando com a exceção ZeroDivisionError
+    print("Divisão por zero não é permitida.")
+```
+
+**Bloco else**
+é executado se nenhum erro ocorrer dentro do bloco try. Isso é útil para executar código que deve ser executado somente se nenhuma exceção ocorrer. 
+```python
+try:
+    resultado = 10 / 2
+except ZeroDivisionError:
+    print("Divisão por zero não é permitida.")
+else:
+    print("O resultado da divisão é:", resultado)
+
+```
+
+**Bloco finally**
+é opcional e sempre executado, independentemente de ocorrer uma exceção ou não. 
+Util para ações de limpeza, como fechar arquivos ou conexões de banco de dados, que devem ser conectadas independentemente de ocorrerem erros. 
+```python
+try:
+    arquivo = open("arquivo.txt", "r")
+    # Operações de leitura/gravação no arquivo
+except FileNotFoundError:
+    print("O arquivo não foi encontrado.")
+finally:
+    arquivo.close()  # Garante que o arquivo seja fechado, mesmo se ocorrer uma exceção
+```
+**Capturando exceções genéricas**
+Pode-se também capturar exceções genéricas para lidar com qualquer tipo de exceção que ocorra. 
+
+```python
+try:
+    # Código que pode gerar uma exceção
+    resultado = 10 / 0
+except Exception as e:
+    # Lidando com qualquer exceção que ocorra
+    print("Ocorreu uma exceção:", e)
+
+```
